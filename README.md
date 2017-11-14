@@ -18,4 +18,3 @@ Change `Assets/WebGLTemplates/BetterTemplate/logo.png` to whatever you want.
 
 See [Unity docs](https://docs.unity3d.com/Manual/webgl-templates.html) on how to customize WebGL Templates.
 
-

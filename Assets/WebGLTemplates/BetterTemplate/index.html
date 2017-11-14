@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="utf-8">
-    <title>WebGLFitWindow</title>
+    <title>%UNITY_WEB_NAME%</title>
     <style>
       html {
         box-sizing: border-box;
@@ -26,12 +26,9 @@
       }
 
       .logo {
-          width: 50vw;
-          height: 33vh;
-          background-image: url(logo.png);
-          background-position: bottom center;
-          background-size: contain;
-          background-repeat: no-repeat;
+          display: block;
+          width: max-width: 100vw;
+          height: max-height: 70vh;
       }
 
       .progress {
@@ -87,35 +84,39 @@
       }
 
     </style>
-    <script src="Build/UnityLoader.js"></script>
-    <script>
-    var gameInstance = UnityLoader.instantiate("gameContainer", "Build/dist.json", {onProgress: UnityProgress});
-    function UnityProgress(gameInstance, progress) {
-      if (!gameInstance.Module) {
-        return;
-      }
-      const loader = document.querySelector("#loader");
-      if (!gameInstance.progress) {
-        const progress = document.querySelector("#loader .progress");
-        progress.style.display = "block";
-        gameInstance.progress = progress.querySelector(".full");
-        loader.querySelector(".spinner").style.display = "none";
-      }
-      gameInstance.progress.style.transform = `scaleX(${progress})`;
-      if (progress === 1) {
-        loader.style.display = "none";
-      }
-    }
-    </script>
   </head>
 
   <body>
     <div id="gameContainer"></div>
     <div id="loader">
-      <div class="logo"></div>
+      <img class="logo" src="logo.png">
       <div class="spinner"></div>
       <div class="progress"><div class="full"></div></div>
     </div>
   </body>
 
+  <script src="%UNITY_WEBGL_LOADER_URL%"></script>
+  <script>
+  var gameInstance = UnityLoader.instantiate("gameContainer", "%UNITY_WEBGL_BUILD_URL%", {onProgress: UnityProgress});
+  function UnityProgress(gameInstance, progress) {
+    if (!gameInstance.Module) {
+      return;
+    }
+    const loader = document.querySelector("#loader");
+    if (!gameInstance.progress) {
+      const progress = document.querySelector("#loader .progress");
+      progress.style.display = "block";
+      gameInstance.progress = progress.querySelector(".full");
+      loader.querySelector(".spinner").style.display = "none";
+    }
+    gameInstance.progress.style.transform = `scaleX(${progress})`;
+    if (progress === 1 && !gameInstance.removeTimeout) {
+      gameInstance.removeTimeout = setTimeout(function() {
+          loader.style.display = "none";
+      }, 2000);
+    }
+  }
+  </script>
+
 </html>
+
