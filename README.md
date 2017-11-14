@@ -8,12 +8,14 @@ Example: https://greggman.github.io/better-unity-webgl-template/
 
 ## Instructions
 
-The short version is you just need the `Assets/WebGLTemplates/BetterTemplate` folder
-in your project. Then pick `Edit->Project Settings->Player`, in the WebGL tab
+Downloand and add in [this unity package](https://github.com/greggman/better-unity-webgl-template/releases/latest)
+into your project. Then pick `Edit->Project Settings->Player`, in the WebGL tab
 under *Resolution and Presentation* pick "BetterTemplate".
 
 <img src="https://i.stack.imgur.com/r5Jns.png" width="358">
 
 Change `Assets/WebGLTemplates/BetterTemplate/logo.png` to whatever you want.
+
+See [Unity docs](https://docs.unity3d.com/Manual/webgl-templates.html) on how to customize WebGL Templates.
 
 
