@@ -2,14 +2,18 @@
 
 I have no idea why Unity choose to not make its WebGL exporter default
 to filling the window like pretty much all other WebGL apps on the net
-but in any case here is a minimal template
+but in any case here is a template
 
 Example: https://greggman.github.io/better-unity-webgl-template/
+
+## Instructions
 
 The short version is you just need the `Assets/WebGLTemplates/BetterTemplate` folder
 in your project. Then pick `Edit->Project Settings->Player`, in the WebGL tab
 under *Resolution and Presentation* pick "BetterTemplate".
 
 <img src="https://i.stack.imgur.com/r5Jns.png" width="358">
+
+Change `Assets/WebGLTemplates/BetterTemplate/logo.png` to whatever you want.
 
 
