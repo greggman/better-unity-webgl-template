@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <title>WebGLFitWindow</title>
+    <style>
+      html {
+        box-sizing: border-box;
+      }
+      *, *:before, *:after {
+        box-sizing: inherit;
+      }
+      body {
+        margin: 0;
+        background: #444;
+      }
+      #gameContainer {
+        width: 100vw;
+        height: 100vh;
+      }
+      canvas {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+
+      .logo {
+          width: 50vw;
+          height: 33vh;
+          background-image: url(logo.png);
+          background-position: bottom center;
+          background-size: contain;
+          background-repeat: no-repeat;
+      }
+
+      .progress {
+          margin: 1.5em;
+          border: 1px solid white;
+          width: 50vw;
+          display: none;
+      }
+      .progress .full {
+          margin: 2px;
+          background: white;
+          height: 1em;
+          transform-origin: top left;
+      }
+
+      #loader {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .spinner,
+      .spinner:after {
+        border-radius: 50%;
+        width: 5em;
+        height: 5em;
+      }
+      .spinner {
+        margin: 10px;
+        font-size: 10px;
+        position: relative;
+        text-indent: -9999em;
+        border-top: 1.1em solid rgba(255, 255, 255, 0.2);
+        border-right: 1.1em solid rgba(255, 255, 255, 0.2);
+        border-bottom: 1.1em solid rgba(255, 255, 255, 0.2);
+        border-left: 1.1em solid #ffffff;
+        transform: translateZ(0);
+        animation: spinner-spin 1.1s infinite linear;
+      }
+      @keyframes spinner-spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+    </style>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+    var gameInstance = UnityLoader.instantiate("gameContainer", "Build/dist.json", {onProgress: UnityProgress});
+    function UnityProgress(gameInstance, progress) {
+      if (!gameInstance.Module) {
+        return;
+      }
+      const loader = document.querySelector("#loader");
+      if (!gameInstance.progress) {
+        const progress = document.querySelector("#loader .progress");
+        progress.style.display = "block";
+        gameInstance.progress = progress.querySelector(".full");
+        loader.querySelector(".spinner").style.display = "none";
+      }
+      gameInstance.progress.style.transform = `scaleX(${progress})`;
+      if (progress === 1) {
+        loader.style.display = "none";
+      }
+    }
+    </script>
+  </head>
+
+  <body>
+    <div id="gameContainer"></div>
+    <div id="loader">
+      <div class="logo"></div>
+      <div class="spinner"></div>
+      <div class="progress"><div class="full"></div></div>
+    </div>
+  </body>
+
+</html>
