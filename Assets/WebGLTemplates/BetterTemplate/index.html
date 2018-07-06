@@ -92,6 +92,7 @@
       <img class="logo" src="logo.png">
       <div class="spinner"></div>
       <div class="progress"><div class="full"></div></div>
+      <div class="percent"></div>
     </div>
   </body>
 
@@ -109,6 +110,7 @@
       gameInstance.progress = progress.querySelector(".full");
       loader.querySelector(".spinner").style.display = "none";
     }
+    loader.querySelector('.percent').textContent = `${(progress * 100).toFixed(0)}%`;
     gameInstance.progress.style.transform = `scaleX(${progress})`;
     if (progress === 1 && !gameInstance.removeTimeout) {
       gameInstance.removeTimeout = setTimeout(function() {
