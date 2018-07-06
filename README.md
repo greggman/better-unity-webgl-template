@@ -4,6 +4,8 @@ I have no idea why Unity choose to not make its WebGL exporter default
 to filling the window like pretty much all other WebGL apps on the net
 but in any case here is a template
 
+![screenshot](https://user-images.githubusercontent.com/234804/42355593-d466f416-8108-11e8-8662-2c8b8ce13032.gif)
+
 Example: https://greggman.github.io/better-unity-webgl-template/
 
 ## Instructions
