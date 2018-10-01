@@ -1,9 +1,12 @@
 {
-"TOTAL_MEMORY": 268435456,
+"companyName": "greggman",
+"productName": "WebGLFitWindow",
 "dataUrl": "dist.data.unityweb",
-"asmCodeUrl": "dist.asm.code.unityweb",
-"asmMemoryUrl": "dist.asm.memory.unityweb",
-"asmFrameworkUrl": "dist.asm.framework.unityweb",
+"wasmCodeUrl": "dist.wasm.code.unityweb",
+"wasmFrameworkUrl": "dist.wasm.framework.unityweb",
+"TOTAL_MEMORY": 268435456,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
 "splashScreenStyle": "Dark",
 "backgroundColor": "#231F20"
 }
