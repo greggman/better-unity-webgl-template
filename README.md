@@ -10,7 +10,7 @@ Example: https://greggman.github.io/better-unity-webgl-template/
 
 ## Instructions
 
-Downloand and add in [this unity package](https://github.com/greggman/better-unity-webgl-template/releases/latest)
+Downloand and add in [this unity package](https://github.com/yepMad/unity-2020-better-webgl-template/releases/tag/v0.0.4)
 into your project. Then pick `Edit->Project Settings->Player`, in the WebGL tab
 under *Resolution and Presentation* pick "BetterTemplate".
 
@@ -21,6 +21,13 @@ Change `Assets/WebGLTemplates/BetterTemplate/logo.png` to whatever you want.
 See [Unity docs](https://docs.unity3d.com/Manual/webgl-templates.html) on how to customize WebGL Templates.
 
 ## Changelist
+
+*   0.0.4
+
+    *   Unity 2020 compatibility
+
+        The new Unity WebGL that appeared in 2020.1 requires greater
+        attention and a different treatment for the templates.
 
 *   0.0.3
 
