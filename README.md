@@ -8,9 +8,24 @@ but in any case here is a template
 
 Example: https://greggman.github.io/better-unity-webgl-template/
 
-## Instructions
+## Instructions 2020
 
-Downloand and add in [this unity package](https://github.com/greggman/better-unity-webgl-template/releases/latest)
+Download and add in [this unity package](https://github.com/greggman/better-unity-webgl-template/releases/latest)
+into your project. Then pick `Edit->Project Settings->Player`, in the WebGL tab
+under *Resolution and Presentation* pick "Better2020".
+
+<img src="https://user-images.githubusercontent.com/234804/90982204-91b04d80-e5a0-11ea-8b89-68abd9bd77d9.png" width="358">
+
+Change `Assets/WebGLTemplates/Better2020/logo.png` to whatever you want.
+
+You can also set "Hide Full Screen Button" to `1` or `true` if you don't want the fullscreen button to appear
+in the bottom right.
+
+See [Unity docs](https://docs.unity3d.com/Manual/webgl-templates.html) on how to customize WebGL Templates.
+
+## Instructions 2019
+
+Download and add in [this unity package](https://github.com/greggman/better-unity-webgl-template/releases/tag/v0.0.3)
 into your project. Then pick `Edit->Project Settings->Player`, in the WebGL tab
 under *Resolution and Presentation* pick "BetterTemplate".
 
@@ -21,6 +36,10 @@ Change `Assets/WebGLTemplates/BetterTemplate/logo.png` to whatever you want.
 See [Unity docs](https://docs.unity3d.com/Manual/webgl-templates.html) on how to customize WebGL Templates.
 
 ## Changelist
+
+*   0.1.0
+
+    *   Add Unity 2020
 
 *   0.0.3
 
